@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#153c35">
+    <title>Katalog Buku | Aksara</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="dashboard.html"><span class="brand-mark">A</span><span>Aksara<span class="brand-dot">.</span></span></a>
+        <nav class="main-nav" aria-label="Navigasi utama">
+            <a href="dashboard.html">Beranda</a><a class="active" href="stok.html">Katalog</a><a href="checkout.html">Pemesanan</a><a href="tracking.html">Lacak pesanan</a>
+        </nav>
+        <button class="nav-logout" type="button" onclick="logout()">Keluar <span aria-hidden="true">↗</span></button>
+    </header>
+    <main class="page-shell">
+        <div class="page-heading page-heading-row"><div><a href="dashboard.html" class="back-link">← Kembali ke beranda</a><span class="eyebrow">KOLEKSI PILIHAN</span><h1>Katalog buku</h1><p>Temukan bacaan dan lihat ketersediaan stok terkini.</p></div><button class="btn" type="button" onclick="openModal('modal-tambah')"><span aria-hidden="true">＋</span> Tambah buku</button></div>
+        <section class="catalog-card">
+            <div class="catalog-caption"><div><h2>Semua koleksi</h2><p>Harga dan jumlah stok diperbarui secara langsung.</p></div><a class="text-link" href="checkout.html">Buat pesanan <span aria-hidden="true">→</span></a></div>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>No.</th><th>Judul buku</th><th>Kategori / edisi</th><th>Harga</th><th>Ketersediaan</th></tr></thead>
+                    <tbody id="katalog-body"></tbody>
+                </table>
+            </div>
+        </section>
+        <footer class="site-footer"><span>Aksara<span class="brand-dot">.</span></span><span>Koleksi yang tumbuh bersama Anda.</span></footer>
+    </main>
+    <div id="modal-tambah" class="modal" role="dialog" aria-modal="true" aria-labelledby="add-book-title">
+        <div class="modal-content modal-wide">
+            <button type="button" class="close-btn" aria-label="Tutup" onclick="closeModal('modal-tambah')">&times;</button>
+            <span class="eyebrow">KELOLA KOLEKSI</span><h3 id="add-book-title">Tambah buku baru</h3>
+            <form id="form-stok" onsubmit="tambahStok(event)" class="form-stack modal-form">
+                <div class="form-group"><label for="kode-buku">Kode buku</label><input id="kode-buku" type="text" required placeholder="Contoh: BUKU1001"></div>
+                <div class="form-group"><label for="judul">Judul buku</label><input id="judul" type="text" required placeholder="Nama buku"></div>
+                <div class="form-row">
+                    <div class="form-group"><label for="jenis">Kategori</label><input id="jenis" type="text" placeholder="Buku Ajar"></div>
+                    <div class="form-group"><label for="edisi">Edisi</label><input id="edisi" type="text" placeholder="1"></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label for="harga">Harga (Rp)</label><input id="harga" type="number" min="1" required placeholder="150000"></div>
+                    <div class="form-group"><label for="stok">Jumlah stok</label><input id="stok" type="number" min="0" required placeholder="20"></div>
+                </div>
+                <p id="stock-message" class="form-message" role="status"></p>
+                <button type="submit" class="btn">Simpan buku</button>
+            </form>
+        </div>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

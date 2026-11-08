@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#153c35">
+    <title>Beranda | Aksara</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="dashboard.html"><span class="brand-mark">A</span><span>Aksara<span class="brand-dot">.</span></span></a>
+        <nav class="main-nav" aria-label="Navigasi utama">
+            <a class="active" href="dashboard.html">Beranda</a><a href="stok.html">Katalog</a><a href="checkout.html">Pemesanan</a><a href="tracking.html">Lacak pesanan</a>
+        </nav>
+        <button class="nav-logout" type="button" onclick="logout()">Keluar <span aria-hidden="true">↗</span></button>
+    </header>
+
+    <main class="page-shell">
+        <section class="welcome-banner">
+            <div><span class="eyebrow">TOKO BUKU PILIHAN</span><h1 id="greeting">Selamat datang!</h1><p>Temukan bacaan yang menginspirasi perjalanan Anda berikutnya.</p><a class="btn btn-light" href="stok.html">Jelajahi katalog <span aria-hidden="true">→</span></a></div>
+            <div class="banner-art" aria-hidden="true"><span class="book-shape book-shape-back"></span><span class="book-shape book-shape-front"></span><span class="art-sparkle">✳</span></div>
+        </section>
+
+        <section class="summary-grid" aria-label="Ringkasan toko">
+            <article class="summary-card"><span class="summary-icon">▤</span><div><span class="summary-label">Judul buku</span><strong id="summary-books">0</strong></div></article>
+            <article class="summary-card"><span class="summary-icon summary-icon-warm">↗</span><div><span class="summary-label">Pesanan Anda</span><strong id="summary-orders">0</strong></div></article>
+            <article class="summary-card"><span class="summary-icon summary-icon-soft">▥</span><div><span class="summary-label">Total stok tersedia</span><strong id="summary-stock">0</strong></div></article>
+        </section>
+
+        <section class="section-block">
+            <div class="section-heading"><div><span class="eyebrow">MULAI DARI SINI</span><h2>Layanan Aksara</h2></div></div>
+            <div class="menu-grid">
+                <a href="stok.html" class="service-card"><span class="service-icon">▤</span><span class="service-arrow">↗</span><h3>Katalog buku</h3><p>Jelajahi koleksi dan cek ketersediaan buku.</p></a>
+                <a href="checkout.html" class="service-card"><span class="service-icon icon-peach">＋</span><span class="service-arrow">↗</span><h3>Buat pesanan</h3><p>Pilih buku favorit dan pesan dengan mudah.</p></a>
+                <a href="tracking.html" class="service-card"><span class="service-icon icon-blue">⌁</span><span class="service-arrow">↗</span><h3>Lacak pesanan</h3><p>Pantau perjalanan buku sampai ke rumah.</p></a>
+            </div>
+        </section>
+
+        <section class="section-block history-section">
+            <div class="section-heading"><div><span class="eyebrow">AKTIVITAS ANDA</span><h2>Riwayat transaksi</h2></div><a class="text-link" href="checkout.html">Pesan buku <span aria-hidden="true">→</span></a></div>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Nomor transaksi</th><th>Tanggal</th><th>Detail pesanan</th><th>Total</th><th>Status</th></tr></thead>
+                    <tbody id="history-body"></tbody>
+                </table>
+            </div>
+        </section>
+        <footer class="site-footer"><span>Aksara<span class="brand-dot">.</span></span><span>Temukan bacaan, perluas wawasan.</span></footer>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

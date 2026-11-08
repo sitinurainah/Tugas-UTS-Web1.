@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#153c35">
+    <title>Lacak Pesanan | Aksara</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="dashboard.html"><span class="brand-mark">A</span><span>Aksara<span class="brand-dot">.</span></span></a>
+        <nav class="main-nav" aria-label="Navigasi utama">
+            <a href="dashboard.html">Beranda</a><a href="stok.html">Katalog</a><a href="checkout.html">Pemesanan</a><a class="active" href="tracking.html">Lacak pesanan</a>
+        </nav>
+        <button class="nav-logout" type="button" onclick="logout()">Keluar <span aria-hidden="true">↗</span></button>
+    </header>
+    <main class="page-shell narrow-shell">
+        <div class="page-heading"><a href="dashboard.html" class="back-link">← Kembali ke beranda</a><span class="eyebrow">INFORMASI PENGIRIMAN</span><h1>Lacak pesanan</h1><p>Masukkan nomor DO untuk melihat pembaruan perjalanan pesanan.</p></div>
+        <form class="tracking-search" onsubmit="event.preventDefault(); cariTracking()">
+            <label for="input-do">Nomor delivery order (DO)</label>
+            <div class="search-row"><input type="text" id="input-do" placeholder="Contoh: 20230012" autocomplete="off" required><button class="btn" type="submit">Lacak <span aria-hidden="true">→</span></button></div>
+        </form>
+        <div id="tracking-result" class="tracking-result" aria-live="polite"></div>
+        <footer class="site-footer"><span>Aksara<span class="brand-dot">.</span></span><span>Setiap buku punya perjalanan.</span></footer>
+    </main>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

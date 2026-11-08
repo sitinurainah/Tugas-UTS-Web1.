@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#153c35">
+    <title>Pemesanan | Aksara</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="dashboard.html"><span class="brand-mark">A</span><span>Aksara<span class="brand-dot">.</span></span></a>
+        <nav class="main-nav" aria-label="Navigasi utama">
+            <a href="dashboard.html">Beranda</a><a href="stok.html">Katalog</a><a class="active" href="checkout.html">Pemesanan</a><a href="tracking.html">Lacak pesanan</a>
+        </nav>
+        <button class="nav-logout" type="button" onclick="logout()">Keluar <span aria-hidden="true">↗</span></button>
+    </header>
+    <main class="page-shell narrow-shell">
+        <div class="page-heading"><a href="dashboard.html" class="back-link">← Kembali ke beranda</a><span class="eyebrow">PESANAN BARU</span><h1>Lengkapi pesanan Anda</h1><p>Pilih buku dari katalog dan isi informasi pengiriman.</p></div>
+        <form class="order-layout" onsubmit="submitPesanan(event)">
+            <section class="form-card">
+                <div class="form-card-heading"><span class="step-number">01</span><div><h2>Informasi penerima</h2><p>Pastikan detail pengiriman sudah benar.</p></div></div>
+                <div class="form-group"><label for="nama-pemesan">Nama lengkap</label><input id="nama-pemesan" type="text" required autocomplete="name" placeholder="Nama penerima"></div>
+                <div class="form-group"><label for="alamat">Alamat pengiriman</label><textarea id="alamat" rows="3" required autocomplete="street-address" placeholder="Jalan, nomor rumah, kecamatan, kota"></textarea></div>
+                <div class="form-group"><label for="metode-pembayaran">Metode pembayaran</label><select id="metode-pembayaran" required><option value="Transfer bank">Transfer bank</option><option value="QRIS">QRIS</option><option value="COD">Bayar di tempat (COD)</option></select></div>
+            </section>
+            <section class="form-card">
+                <div class="form-card-heading"><span class="step-number">02</span><div><h2>Detail buku</h2><p>Stok dan harga mengikuti katalog terbaru.</p></div></div>
+                <div class="form-group"><label for="buku-select">Pilih buku</label><select id="buku-select" onchange="hitungTotal()" required><option value="">Memuat katalog...</option></select></div>
+                <div class="form-group"><label for="jumlah">Jumlah buku</label><input type="number" id="jumlah" value="1" min="1" oninput="hitungTotal()" required></div>
+                <div class="total-box"><span>Total pembayaran</span><strong id="total-bayar">Rp0</strong></div>
+                <p id="order-message" class="form-message" role="status"></p>
+                <button type="submit" class="btn btn-block">Buat pesanan <span aria-hidden="true">→</span></button>
+                <p class="secure-note">Pesanan akan tersimpan di riwayat dan dapat dilacak setelah dibuat.</p>
+            </section>
+        </form>
+        <footer class="site-footer"><span>Aksara<span class="brand-dot">.</span></span><span>Belanja buku dengan nyaman.</span></footer>
+    </main>
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

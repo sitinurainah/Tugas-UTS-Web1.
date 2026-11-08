@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#153c35">
+    <title>Masuk | Aksara</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+    <main class="login-layout">
+        <section class="login-intro">
+            <a class="brand brand-light" href="index.html"><span class="brand-mark">A</span><span>Aksara<span class="brand-dot">.</span></span></a>
+            <div class="intro-copy">
+                <span class="eyebrow">RUANG UNTUK BERTUMBUH</span>
+                <h1>Temukan cerita,<br>mulai perjalanan.</h1>
+                <p>Koleksi bacaan pilihan untuk menemani setiap langkah belajar dan berkarya.</p>
+            </div>
+            <div class="intro-note">“Buku adalah jendela untuk melihat dunia.”</div>
+        </section>
+
+        <section class="login-panel">
+            <div class="mobile-brand"><a class="brand" href="index.html"><span class="brand-mark">A</span><span>Aksara<span class="brand-dot">.</span></span></a></div>
+            <div class="login-card">
+                <span class="eyebrow">SELAMAT DATANG KEMBALI</span>
+                <h2>Masuk ke akun</h2>
+                <p class="muted">Lanjutkan perjalanan membaca Anda.</p>
+                <form onsubmit="handleLogin(event)" class="form-stack">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" autocomplete="username" required placeholder="nama@email.com">
+                    </div>
+                    <div class="form-group">
+                        <div class="label-row"><label for="password">Kata sandi</label><a href="#" onclick="openModal('modal-lupa'); return false;">Lupa kata sandi?</a></div>
+                        <input type="password" id="password" autocomplete="current-password" required placeholder="Masukkan kata sandi">
+                    </div>
+                    <p id="login-message" class="form-message" role="status"></p>
+                    <button type="submit" class="btn btn-block">Masuk ke akun <span aria-hidden="true">→</span></button>
+                </form>
+                <p class="signup-prompt">Belum punya akun? <a href="#" onclick="openModal('modal-daftar'); return false;">Buat akun</a></p>
+            </div>
+            <p class="copyright">© 2026 Aksara Bookstore</p>
+        </section>
+    </main>
+
+    <div id="modal-lupa" class="modal" role="dialog" aria-modal="true" aria-labelledby="reset-title">
+        <div class="modal-content">
+            <button type="button" class="close-btn" aria-label="Tutup" onclick="closeModal('modal-lupa')">&times;</button>
+            <span class="eyebrow">BANTUAN AKUN</span>
+            <h3 id="reset-title">Lupa kata sandi?</h3>
+            <p class="muted modal-lead">Masukkan email akun Anda untuk memeriksa informasi pemulihan.</p>
+            <form onsubmit="handlePasswordReset(event)" class="form-stack">
+                <div class="form-group"><label for="reset-email">Email</label><input id="reset-email" type="email" required placeholder="nama@email.com"></div>
+                <p id="reset-message" class="form-message" role="status"></p>
+                <button class="btn" type="submit">Periksa email</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-daftar" class="modal" role="dialog" aria-modal="true" aria-labelledby="register-title">
+        <div class="modal-content">
+            <button type="button" class="close-btn" aria-label="Tutup" onclick="closeModal('modal-daftar')">&times;</button>
+            <span class="eyebrow">MULAI MEMBACA</span>
+            <h3 id="register-title">Buat akun baru</h3>
+            <form id="register-form" onsubmit="handleRegister(event)" class="form-stack modal-form">
+                <div class="form-group"><label for="register-name">Nama lengkap</label><input id="register-name" type="text" required autocomplete="name" placeholder="Nama Anda"></div>
+                <div class="form-group"><label for="register-email">Email</label><input id="register-email" type="email" required autocomplete="email" placeholder="nama@email.com"></div>
+                <div class="form-group"><label for="register-password">Kata sandi</label><input id="register-password" type="password" required minlength="6" autocomplete="new-password" placeholder="Minimal 6 karakter"></div>
+                <p id="register-message" class="form-message" role="status"></p>
+                <button class="btn" type="submit">Daftar sekarang</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
